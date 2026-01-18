@@ -1,0 +1,38 @@
+# MarketInsight Backend Deployment - Render.com
+# This file can be used to programmatically deploy to Render via their API
+
+{
+  "name": "market-insight-backend",
+  "region": "oregon",
+  "plan": "free",
+  "env": "python",
+  "buildCommand": "pip install -r requirements.txt",
+  "startCommand": "uvicorn main:app --host 0.0.0.0 --port $PORT",
+  "envVars": [
+    {
+      "key": "PYTHON_VERSION",
+      "value": "3.11.0",
+      "sync": false
+    },
+    {
+      "key": "THESYS_API_KEY",
+      "value": "surajitmoon14-9547",
+      "sync": false
+    },
+    {
+      "key": "LANGFUSE_PUBLIC_KEY",
+      "value": "dummy_public_key",
+      "sync": false
+    },
+    {
+      "key": "LANGFUSE_SECRET_KEY",
+      "value": "dummy_secret_key",
+      "sync": false
+    },
+    {
+      "key": "LANGFUSE_HOST",
+      "value": "https://cloud.langfuse.com",
+      "sync": false
+    }
+  ]
+}

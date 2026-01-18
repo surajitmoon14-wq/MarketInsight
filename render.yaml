@@ -7,3 +7,11 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
+      - key: THESYS_API_KEY
+        value: surajitmoon14-9547
+      - key: LANGFUSE_PUBLIC_KEY
+        value: dummy_public_key
+      - key: LANGFUSE_SECRET_KEY
+        value: dummy_secret_key
+      - key: LANGFUSE_HOST
+        value: https://cloud.langfuse.com
