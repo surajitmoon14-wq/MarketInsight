@@ -1,0 +1,253 @@
+/* ===================================
+   HOME PAGE LAYOUT
+   =================================== */
+
+.home-page {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: var(--bg-dark-navy);
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* ===================================
+   HEADER
+   =================================== */
+
+.home-header {
+  padding: 2rem 0;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.logo-icon {
+  font-size: 4rem;
+  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.6));
+  animation: float 4s ease-in-out infinite;
+}
+
+.logo-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero-section {
+  text-align: center;
+  padding: 4rem 0 6rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  animation: scaleIn 0.8s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-white-80);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.hero-cta {
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+/* ===================================
+   FEATURES SECTION
+   =================================== */
+
+.features-section {
+  padding: 4rem 0;
+  animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.features-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+.home-footer {
+  padding: 3rem 0 2rem;
+  text-align: center;
+  animation: fadeIn 1s ease-out 0.8s backwards;
+}
+
+.footer-divider {
+  height: 2px;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  background: var(--gradient-primary);
+  opacity: 0.5;
+  border-radius: 2px;
+}
+
+.footer-text {
+  font-size: 0.9375rem;
+  color: var(--text-white-60);
+  font-weight: 500;
+}
+
+/* ===================================
+   ANIMATED PARTICLES (Optional Enhancement)
+   =================================== */
+
+.home-page::before,
+.home-page::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-page::before {
+  width: 500px;
+  height: 500px;
+  top: -250px;
+  right: -250px;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+.home-page::after {
+  width: 400px;
+  height: 400px;
+  bottom: -200px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(255, 0, 110, 0.15) 0%, transparent 70%);
+  animation: pulse 10s ease-in-out infinite reverse;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .logo-title {
+    font-size: 3rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+    padding: 0 1rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-content {
+    padding: 1.5rem;
+  }
+  
+  .home-header {
+    padding: 1rem 0;
+  }
+  
+  .logo-container {
+    gap: 0.75rem;
+  }
+  
+  .logo-icon {
+    font-size: 2.5rem;
+  }
+  
+  .logo-title {
+    font-size: 2rem;
+  }
+  
+  .hero-section {
+    padding: 3rem 0 4rem;
+  }
+  
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .features-section {
+    padding: 3rem 0;
+  }
+  
+  .features-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .home-footer {
+    padding: 2rem 0 1.5rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .logo-title {
+    font-size: 1.75rem;
+  }
+  
+  .features-heading {
+    font-size: 1.75rem;
+  }
+}
