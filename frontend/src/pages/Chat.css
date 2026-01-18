@@ -1,0 +1,263 @@
+/* ===================================
+   CHAT PAGE LAYOUT
+   =================================== */
+
+.chat-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.chat-container {
+  width: 100%;
+  height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  position: relative;
+  padding-top: 80px;
+}
+
+.chat-container * {
+  font-family: inherit !important;
+}
+
+/* ===================================
+   RECOMMENDATIONS OVERLAY - Enhanced with Vibrant Colors
+   =================================== */
+
+.recommendations-overlay {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.recommendations-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+/* ===================================
+   RECOMMENDATION BOX - Vibrant Styling
+   =================================== */
+
+.recommendation-box {
+  background: var(--bg-card);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+/* Gradient border effect on each box */
+.recommendation-box:nth-child(1) {
+  border-image: var(--gradient-primary) 1;
+  border-style: solid;
+}
+
+.recommendation-box:nth-child(2) {
+  border-image: linear-gradient(135deg, var(--color-magenta), var(--color-gold)) 1;
+  border-style: solid;
+}
+
+.recommendation-box:nth-child(3) {
+  border-image: linear-gradient(135deg, var(--color-lime), var(--color-cyan)) 1;
+  border-style: solid;
+}
+
+.recommendation-box:nth-child(4) {
+  border-image: linear-gradient(135deg, var(--color-gold), var(--color-blue)) 1;
+  border-style: solid;
+}
+
+/* Animated gradient overlay */
+.recommendation-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: var(--radius-md);
+}
+
+/* Hover state with glow and scale */
+.recommendation-box:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-card-hover);
+  background: var(--bg-card-hover);
+}
+
+.recommendation-box:nth-child(1):hover {
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.recommendation-box:nth-child(2):hover {
+  box-shadow: var(--shadow-glow-magenta);
+}
+
+.recommendation-box:nth-child(3):hover {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.recommendation-box:nth-child(4):hover {
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.recommendation-box:hover::before {
+  opacity: 0.08;
+}
+
+/* Active state */
+.recommendation-box:active {
+  transform: translateY(-2px) scale(1);
+}
+
+/* Focus state for accessibility */
+.recommendation-box:focus {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+/* ===================================
+   RECOMMENDATION ICON - Enhanced
+   =================================== */
+
+.recommendation-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+  transition: var(--transition-smooth);
+  filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.4));
+}
+
+.recommendation-box:hover .recommendation-icon {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 0 16px rgba(0, 217, 255, 0.8));
+}
+
+.recommendation-box:nth-child(2):hover .recommendation-icon {
+  filter: drop-shadow(0 0 16px rgba(255, 0, 110, 0.8));
+}
+
+.recommendation-box:nth-child(3):hover .recommendation-icon {
+  filter: drop-shadow(0 0 16px rgba(0, 255, 136, 0.8));
+}
+
+.recommendation-box:nth-child(4):hover .recommendation-icon {
+  filter: drop-shadow(0 0 16px rgba(255, 183, 0, 0.8));
+}
+
+/* ===================================
+   RECOMMENDATION TEXT - Enhanced
+   =================================== */
+
+.recommendation-text {
+  margin: 0;
+  color: var(--text-white-90);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  flex: 1;
+  transition: var(--transition-smooth);
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.recommendation-box:hover .recommendation-text {
+  color: var(--text-white);
+  transform: translateX(2px);
+}
+
+/* ===================================
+   MOBILE RESPONSIVENESS
+   =================================== */
+
+@media (max-width: 768px) {
+  .chat-container {
+    padding-top: 70px;
+  }
+
+  .recommendations-container {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .recommendation-box {
+    padding: 1rem;
+  }
+
+  .recommendation-icon {
+    font-size: 1.75rem;
+  }
+
+  .recommendation-text {
+    font-size: 0.875rem;
+  }
+
+  .recommendations-overlay {
+    padding: 0 0.75rem;
+  }
+}
+
+/* Tablet breakpoint */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .recommendations-overlay {
+    max-width: 700px;
+  }
+}
+
+/* ===================================
+   SMOOTH ANIMATIONS
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Base Styles for chat integration */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: fixed;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}

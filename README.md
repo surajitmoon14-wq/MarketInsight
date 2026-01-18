@@ -16,9 +16,12 @@ Market Insight leverages advanced AI agents to deliver real-time stock market in
 - Langfuse for observability and tracing
 
 **Frontend:**
-- Modern React-based interface
-- Real-time streaming responses
-- Responsive design for all devices
+- Modern React 19 + TypeScript + Vite
+- Beautiful dark theme with vibrant animated UI
+- React Router for seamless navigation
+- Real-time streaming responses with C1Chat
+- Fully responsive design for all devices
+- See [frontend/TRANSFORMATION.md](frontend/TRANSFORMATION.md) for details
 
 ## Getting Started
 
