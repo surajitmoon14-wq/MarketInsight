@@ -2,6 +2,7 @@ import { C1Chat, ThemeProvider } from '@thesysai/genui-sdk'
 import '@crayonai/react-ui/styles/index.css'
 import { useState, useCallback, useRef, useEffect } from 'react'
 import Navigation from '../components/Navigation'
+import ErrorBoundary from '../components/ErrorBoundary'
 import './Chat.css'
 
 // Recommendation data
@@ -249,14 +250,20 @@ export default function Chat() {
       <div className="animated-background"></div>
       <Navigation showBackButton={true} />
       <div className="chat-container" ref={chatContainerRef}>
-        <ThemeProvider mode="dark">
-          <C1Chat
-            apiUrl={import.meta.env.VITE_API_URL || "https://marketinsight-skgl.onrender.com/api/chat"}
-            agentName="Market Insight"
-            logoUrl="/icon.png"
-            formFactor="full-page"
-          />
-        </ThemeProvider>
+        <ErrorBoundary fallback={<div className="chat-error-state">
+          <h3>Chat Initialization Failed</h3>
+          <p>We're having trouble connecting to the AI assistant. Please check your internet connection and try again.</p>
+          <button onClick={() => window.location.reload()}>Try Again</button>
+        </div>}>
+          <ThemeProvider mode="dark">
+            <C1Chat
+              apiUrl={import.meta.env.VITE_API_URL || "https://marketinsight-skgl.onrender.com/api/chat"}
+              agentName="Market Insight"
+              logoUrl="/icon.png"
+              formFactor="full-page"
+            />
+          </ThemeProvider>
+        </ErrorBoundary>
       </div>
     </div>
   )
