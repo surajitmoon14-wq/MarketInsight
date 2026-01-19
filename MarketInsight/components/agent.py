@@ -18,7 +18,8 @@ if not thesys_api_key:
 model = ChatOpenAI(
         model = "c1/openai/gpt-5/v-20250930",
         base_url = "https://api.thesys.dev/v1/embed/",
-        api_key = thesys_api_key
+        api_key = thesys_api_key,
+        timeout = 60
     )
 
 agent = create_agent(

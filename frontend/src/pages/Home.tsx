@@ -51,6 +51,10 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="hero-section">
+          <div className="hero-badge">
+            <span className="badge-dot"></span>
+            AI-Powered Analysis Ready
+          </div>
           <h2 className="hero-title">
             Your <GradientText>AI-Powered</GradientText><br />
             Stock Market Analyst
@@ -63,6 +67,11 @@ export default function Home() {
             <AnimatedButton onClick={handleLaunchChat} variant="primary">
               🚀 Launch AI Chat
             </AnimatedButton>
+            <div className="cta-secondary-info">
+              <span>Free to use</span>
+              <span className="dot-divider"></span>
+              <span>Real-time Data</span>
+            </div>
           </div>
         </section>
 

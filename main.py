@@ -14,16 +14,22 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Update with your Vercel URL
+    allow_origins=[
+        "https://frontend-sepia-psi-51.vercel.app",
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:5173",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 langfuse = Langfuse(
-    public_key=os.getenv("LANGFUSE_PUBLIC_KEY"),
-    secret_key=os.getenv("LANGFUSE_SECRET_KEY"),
-    host=os.getenv("LANGFUSE_HOST")
+    public_key=os.getenv("LANGFUSE_PUBLIC_KEY", "dummy_public_key"),
+    secret_key=os.getenv("LANGFUSE_SECRET_KEY", "dummy_secret_key"),
+    host=os.getenv("LANGFUSE_HOST", "https://cloud.langfuse.com")
 )
 
 

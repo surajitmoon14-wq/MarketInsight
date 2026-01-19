@@ -24,6 +24,46 @@
   font-family: inherit !important;
 }
 
+.chat-error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  background: var(--bg-dark-navy);
+}
+
+.chat-error-state h3 {
+  color: var(--color-magenta);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.chat-error-state p {
+  color: var(--text-white-70);
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+
+.chat-error-state button {
+  padding: 0.75rem 1.5rem;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.chat-error-state button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
 /* ===================================
    RECOMMENDATIONS OVERLAY - Enhanced with Vibrant Colors
    =================================== */

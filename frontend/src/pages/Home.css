@@ -55,14 +55,41 @@
   text-align: center;
   padding: 4rem 0 6rem;
   animation: fadeInUp 1s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  color: var(--color-cyan);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-cyan);
+  animation: pulse 2s infinite;
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   animation: scaleIn 0.8s ease-out;
 }
 
@@ -70,13 +97,34 @@
   font-size: 1.25rem;
   line-height: 1.8;
   color: var(--text-white-80);
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto 3rem;
   animation: fadeInUp 1s ease-out 0.2s backwards;
 }
 
 .hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
   animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.cta-secondary-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-white-60);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.dot-divider {
+  width: 4px;
+  height: 4px;
+  background: var(--text-white-60);
+  border-radius: 50%;
+  opacity: 0.5;
 }
 
 /* ===================================
