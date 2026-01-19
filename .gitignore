@@ -180,7 +180,7 @@ jspm_packages/
 bower_components/
 
 # Package manager files
-package-lock.json
+# package-lock.json (keep this for production builds)
 yarn.lock
 pnpm-lock.yaml
 .pnpm-debug.log*
